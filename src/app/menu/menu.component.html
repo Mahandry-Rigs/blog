@@ -8,37 +8,30 @@
         </ul>
       </div>
     </div>
-    <p class="h1"> <button type="button" class=" btn btn-sm btn-warning" data-toggle="modal" data-target="#exampleModal"> <i class="fa fa-plus-square"></i> AJOUTER ARTICLE</button>
-    </p>
   </div>
+
+<button class="btn btn-lg btn-outline-warning" (click)="open(content)"> Ajouts Article </button>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Ajouter Article</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+          <input type="text" class="form-control mt-2 mb-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Auteur" >
+          <input type="text" class="form-control mt-2 mb-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Categorie" >
+          <textarea type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> </textarea>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ajouter</button>
+  </div>
+</ng-template>
+<!-- <pre>{{ closeResult }}</pre> -->
+
 </nav>
+<hr>
 
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<script>
-  $('#myModal').on('shown.bs.modal', function () {
-  $('#myInput').trigger('focus')
-  })
-</script>
