@@ -88,9 +88,14 @@
               "src/assets"
             ],
             "styles": [
+              "../node_modules/bootstrap/dist/css/bootstrap.css",
+              "../node_modules/font-awesome/css/font-awesome.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+                "../node_modules/bootstrap/dist/js/bootstrap.js",
+                "../node_modules/bootstrap/js/dist/modal.js"
+            ]
           }
         },
         "lint": {
@@ -119,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "blog"
+    }
+  },
+  "defaultProject": "blog",
+  "cli": {
+    "analytics": false
+  }
 }
