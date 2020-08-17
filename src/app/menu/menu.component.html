@@ -1,0 +1,44 @@
+<nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark " id="mainNav">
+  <div class="container" id="aa">
+    <p class="h1 text-warning ">BLOG</p>
+    <div class="col w-100">
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="nav navbar-nav ml-450 text-uppercase w-50">
+          <input type="search" class="form-control ds-input w-100 " id="search-input" placeholder="Trouver Articles...">
+        </ul>
+      </div>
+    </div>
+    <p class="h1"> <button type="button" class=" btn btn-sm btn-warning" data-toggle="modal" data-target="#exampleModal"> <i class="fa fa-plus-square"></i> AJOUTER ARTICLE</button>
+    </p>
+  </div>
+</nav>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  $('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+  })
+</script>
