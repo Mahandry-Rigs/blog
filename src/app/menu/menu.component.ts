@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ARTICLES } from '../mock-article';
+import { Article } from '../article';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -10,9 +11,7 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 export class MenuComponent implements OnInit {
   closeResult = '';
   artikla = ARTICLES;
-
   showModal: false;
-
 
   constructor(private modalService: NgbModal) { }
   open(content) {
@@ -22,7 +21,6 @@ export class MenuComponent implements OnInit {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
   }
-
 
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
@@ -42,17 +40,10 @@ export class MenuComponent implements OnInit {
     if (art == '') {
       this.artikla = ARTICLES;
     }
-    this.artikla = this.artikla.filter(() => {
-      return art.nom.includes(art);
+    this.artikla = ARTICLES.filter((Article) => {
+      return Article.contenu.includes(art);
     })
   }
 
-  searchAuteur(art) {
-    if (art == '') {
-      this.artikla = ARTICLES;
-    }
-    this.artikla = this.artikla.filter(() => {
-      return art.nom.includes(art);
-    })
-  }
+
 }

@@ -12,21 +12,17 @@ export class AppComponent {
 
   title = 'blog';
   artikla = ARTICLES;
-
   nbr = this.artikla
 
-
-  addArticle(art) {
-    let lastArticle = this.artikla.slice(-1);
-    console.log(lastArticle[0]);
-    let newArticle = new Article;
-    newArticle.auteur = art.auteur;
-    newArticle.categorie = art.categorie;
-    newArticle.contenu = art.contenu;
-    newArticle.id = lastArticle[0].id + 1;
-    this.artikla.push(newArticle);
-    console.log(newArticle);
-
+ searchAuteur(art) {
+    if (art == '') {
+      this.artikla = ARTICLES;
+      console.log(this.artikla)
+    }
+    this.artikla = this.artikla.filter(() => {
+      return art.nom.includes(art);
+      console.log(art.nom.includes(art))
+    })
   }
-
+  
 }

@@ -1,5 +1,5 @@
 <div class="container mb-4" *ngFor="let art of artikla">
-  <div class="card bg-warning ml-2">
+  <div class="card bg-light-gray ml-2">
     <div class="row ml-2"> <h5> {{ art.categorie }} (Par: {{ art.auteur }} ) </h5> </div>
     <div class="row ml-2"> <h6>{{ art.contenu }} </h6> </div>
 
@@ -7,9 +7,9 @@
     <div class="row mt-3 mb-2 ml-4 ">
     <!-- <div class="pull-right "> -->
       <div class="btn-group">
-        <a class="btn btn-outline-danger " href="#"><span class="fa fa-heart"></span> J'aime </a>
-        <a class="btn btn-outline-secondary" href="#"><span class="fa fa-comment"></span> Commenter </a>
-        <a class="btn btn-outline-info" href="#"><span class="fa fa-share-alt"></span> Partager </a>
+        <a class="btn btn-sm btn-outline-danger " href="#"><span class="fa fa-heart"></span> {{ art.jaime }} </a>
+        <a class="btn btn-sm btn-outline-secondary" href="#"><span class="fa fa-comment"></span> Commenter </a>
+        <!-- <a class="btn btn-sm btn-outline-info" href="#"><span class="fa fa-share-alt"></span> Partager </a> -->
       </div>
     </div>
 

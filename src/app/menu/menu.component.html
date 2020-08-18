@@ -4,7 +4,7 @@
     <div class="col w-100">
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="nav navbar-nav ml-450 text-uppercase w-50">
-          <input type="search" class="form-control ds-input w-100 " id="search-input" placeholder="Trouver Articles...">
+          <input type="search" class="form-control ds-input w-100 " #searchTerm (input)="searchArticle(searchTerm.value)" id="search-input" placeholder="Trouver Articles...">
         </ul>
       </div>
     </div>
