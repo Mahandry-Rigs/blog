@@ -4,23 +4,24 @@
 
 <div class="container-fluid" style="margin-top: 100px" >
   <div class="row flex-xl-nowrap">
-
-
+  <h5> {{iza}}</h5>
 <!-- A GAUCHE -->
       <div class="col-12 col-md-3 col-xl-2 bd-sidebar ml-2 bd-toc">
+      
         <form class="bd-search d-flex align-items-center">
           <input type="search" #searchTerm (input)="searchAuteur(searchTerm.value)" class="form-control ds-input" id="search-input" placeholder="Trouver Auteurs...">
         </form>
           <div class="mt-2 mb-1" *ngFor="let art of artikla">
-          <a name="" id="" class="btn btn-primary btn-block bg-dark" href="#" role="button"> {{ art.auteur }} ( <i class="fa fa-heart" aria-hidden="true"> : {{ art.jaime}}</i> ) </a>
+          <a name="" id="" class="btn btn-primary btn-block bg-dark" (click)="selectArticle(arta)" > {{ art.auteur }} (<i class="fa fa-heart" aria-hidden="true"> : {{ art.jaime}}</i> ) </a>
         </div>
        </div>
 <!-- A GAUCHE -->
 
-
+   
 <!-- AU CENTRE -->
         <main class="col-12 col-md-9 col-xl-8  "> 
-          <app-publication></app-publication>
+           
+                   <app-publication ></app-publication>
         </main>
 <!-- AU CENTRE -->
 
@@ -28,17 +29,16 @@
 <!-- A DROITE -->
       <div class="col-12 col-md-3 col-xl-2 bd-sidebar pl-1 bd-toc">
         <form class="bd-search d-flex align-items-center">
-          <input type="search" #searchTerm (input)="searchAuteur(searchTerm.value)" class="form-control ds-input" id="search-input2" placeholder="Trouver Categories...">
+          <input type="search" #searchTerm2 (input)="searchCategorie(searchTerm2.value)" class="form-control ds-input" id="search-input2" placeholder="Trouver Categories...">
         </form>
         <br>
-          <div class="checkbox"> <label> <b><input type="checkbox" value=""> Tous </b>  </label> </div>
-          <div class="mt-2 mb-1" *ngFor="let art of artikla">
-            <div class="checkbox"> <label> <b><input type="checkbox" value=""> {{  art.categorie }} </b>  </label> </div>
+          <div class="checkbox"> <label> <b><input type="checkbox" value=""> Selectionner tous </b>  </label> </div>
+          <div class="mt-2 mb-1" *ngFor="let kat of kategoria">
+            <!-- <a name="" id="" class="btn btn-primary btn-block bg-dark" href="#" role="button"> {{kat.categorie }} ( <i class="fa fa-heart" aria-hidden="true"> </i> ) </a> -->
+            <div class="checkbox"> <label> <b><input type="checkbox" value=""> {{  kat.categorie }} </b> </label> </div>
           </div>
       </div>
 <!-- A DROITE -->
     
-
-
   </div>
   </div>

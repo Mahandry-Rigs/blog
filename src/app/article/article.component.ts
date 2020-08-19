@@ -9,6 +9,7 @@ import { Article } from '../article';
 })
 export class ArticleComponent implements OnInit {
   artikla = ARTICLES;
+  iza = 'azera'
 
   constructor() { }
 
