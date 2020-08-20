@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ARTICLES } from './mock-article';
 import { Article } from './article';
 
@@ -13,6 +13,7 @@ export class AppComponent {
   title = 'blog';
   artikla = ARTICLES;
   nbr = this.artikla
+  listArticles;
 
  searchAuteur(art) {
     if (art == '') {
@@ -21,8 +22,11 @@ export class AppComponent {
     }
     this.artikla = this.artikla.filter(() => {
       return art.nom.includes(art);
-      console.log(art.nom.includes(art))
     })
+  }
+
+  searchArticle(articles) {
+    this.listArticles = articles;
   }
   
 }

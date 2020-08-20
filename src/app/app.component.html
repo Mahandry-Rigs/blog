@@ -1,5 +1,5 @@
 <!-- MENU -->
-<app-menu> </app-menu>
+<app-menu (termArticle)="searchArticle($event)"> </app-menu>
 <!-- MENU -->
 
 <div class="container-fluid" style="margin-top: 100px" >
@@ -20,7 +20,7 @@
 
 <!-- AU CENTRE -->
         <main class="col-12 col-md-9 col-xl-8  "> 
-          <app-publication></app-publication>
+          <app-publication [articles]="listArticles"></app-publication>
         </main>
 <!-- AU CENTRE -->
 

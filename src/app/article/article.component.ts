@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ARTICLES } from '../mock-article';
 import { Article } from '../article';
 
@@ -7,15 +7,22 @@ import { Article } from '../article';
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.css']
 })
-export class ArticleComponent implements OnInit {
+export class ArticleComponent implements OnInit, OnChanges {
   artikla = ARTICLES;
-
+  @Input() articles;
   constructor() { }
-
+  ngOnChanges(changes: SimpleChanges) {
+    if(changes.articles.currentValue) {
+      this.artikla = this.articles;
+    }
+  }
   ngOnInit(): void {
+    this.listArticle;
   }
 
-
+  listArticle() {
+    return this.artikla;
+  }
   addArticle(art) {
     let lastArticle = this.artikla.slice(-1);
     console.log(lastArticle[0]);

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ARTICLES } from '../mock-article';
 import { Article } from '../article';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
@@ -12,8 +12,11 @@ export class MenuComponent implements OnInit {
   closeResult = '';
   artikla = ARTICLES;
   showModal: false;
+  @Output() termArticle = new EventEmitter();
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal) {
+      // this.termArticle = new EventEmitter();
+   }
   open(content) {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
@@ -41,8 +44,10 @@ export class MenuComponent implements OnInit {
       this.artikla = ARTICLES;
     }
     this.artikla = ARTICLES.filter((Article) => {
+      
       return Article.contenu.includes(art);
     })
+    this.termArticle.emit(this.artikla);
   }
 
 
