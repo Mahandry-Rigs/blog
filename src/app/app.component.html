@@ -31,9 +31,10 @@
           <input type="search" #searchTerm (input)="searchAuteur(searchTerm.value)" class="form-control ds-input" id="search-input2" placeholder="Trouver Categories...">
         </form>
         <br>
-          <div class="checkbox"> <label> <b><input type="checkbox" value=""> Tous </b>  </label> </div>
-          <div class="mt-2 mb-1" *ngFor="let art of artikla">
-            <div class="checkbox"> <label> <b><input type="checkbox" value=""> {{  art.categorie }} </b>  </label> </div>
+          <div class="checkbox"> <label> <b><input type="checkbox" value=""> Afficher  TOUS </b>  </label> </div>
+          <div class="checkbox"> <label> <b><input type="checkbox" value=""> Afficher les FAVORIS </b>  </label> </div>
+          <div class="" *ngFor="let art of artikla">
+            <div class="checkbox"> <label> <input type="checkbox" value=""> {{  art.categorie }}  </label> </div>
           </div>
       </div>
 <!-- A DROITE -->
