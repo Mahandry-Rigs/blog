@@ -23,7 +23,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FontAwesomeModule,
     NgbModule,
     FormsModule
-     
   ],
   providers: [],
   bootstrap: [AppComponent]

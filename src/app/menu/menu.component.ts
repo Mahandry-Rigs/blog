@@ -43,6 +43,7 @@ export class MenuComponent implements OnInit {
     if (art == '') {
       this.artikla = ARTICLES;
     }
+    console.log(art)
     this.artikla = ARTICLES.filter((Article) => {
       
       return Article.contenu.includes(art);

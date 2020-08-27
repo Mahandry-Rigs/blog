@@ -9,6 +9,8 @@ import { Article } from '../article';
 })
 export class ArticleComponent implements OnInit, OnChanges {
   artikla = ARTICLES;
+  iza = 'azera'
+
   @Input() articles;
   constructor() { }
   ngOnChanges(changes: SimpleChanges) {
