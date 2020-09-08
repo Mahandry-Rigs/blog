@@ -28,12 +28,13 @@
 <!-- A DROITE -->
       <div class="col-12 col-md-3 col-xl-2 bd-sidebar pl-1 bd-toc">
         <form class="bd-search d-flex align-items-center">
-          <input type="search" #searchTerm (input)="searchAuteur(searchTerm.value)" class="form-control ds-input" id="search-input2" placeholder="Trouver Categories...">
+          <input type="search" #searchTerma (input)="searchCategori(searchTerma.value)" class="form-control ds-input"
+            id="search-input2" placeholder="Trouver Categories...">
         </form>
         <br>
           <div class="checkbox"> <label> <b><input type="checkbox" value=""> Tous </b>  </label> </div>
-          <div class="mt-2 mb-1" *ngFor="let art of artikla">
-            <div class="checkbox"> <label> <b><input type="checkbox" value=""> {{  art.categorie }} </b>  </label> </div>
+          <div class="mt-2 mb-1" *ngFor="let kat of artikla">
+            <div class="checkbox"> <label> <b><input type="checkbox" value=""> {{  kat.categorie }} </b>  </label> </div>
           </div>
       </div>
 <!-- A DROITE -->

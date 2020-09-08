@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ARTICLES } from './mock-article';
-import { Article } from './article';
+// import { Article } from './article';
 
 
 @Component({
@@ -12,21 +12,35 @@ export class AppComponent {
 
   title = 'blog';
   artikla = ARTICLES;
-  nbr = this.artikla
+  nbr = this.artikla;
   listArticles;
 
- searchAuteur(art) {
-    if (art == '') {
-      this.artikla = ARTICLES;
-      console.log(this.artikla)
-    }
-    this.artikla = this.artikla.filter(() => {
-      return art.nom.includes(art);
-    })
-  }
 
   searchArticle(articles) {
     this.listArticles = articles;
   }
   
+  checkValue(event: any) {
+    console.log(event);
+  }
+
+  searchAuteur(art) {
+    if (art == '') {
+      this.artikla = ARTICLES;
+    }
+    this.artikla = this.artikla.filter((Article) => {
+      return Article.auteur.includes(art);
+    })
+  }
+
+
+  searchCategori(kat) {
+    if (kat == '') {
+      this.artikla = ARTICLES;
+    }
+    this.artikla = this.artikla.filter((Article) => {
+      return Article.categorie.includes(kat);
+    })
+  }
+
 }
